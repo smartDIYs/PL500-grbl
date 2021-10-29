@@ -159,13 +159,13 @@
 
     #ifdef DUAL_AXIS_CONFIG_PROTONEER_V3_51
       // NOTE: Step pulse and direction pins may be on any port and output pin.
-      #define STEP_DDR_DUAL       DDRC
-      #define STEP_PORT_DUAL      PORTC
-      #define DUAL_STEP_BIT       4  // Uno Analog Pin 4
+      #define STEP_DDR_DUAL       STEP_DDR
+      #define STEP_PORT_DUAL      STEP_PORT
+      #define DUAL_STEP_BIT       Z_STEP_BIT
       #define STEP_MASK_DUAL      ((1<<DUAL_STEP_BIT))
-      #define DIRECTION_DDR_DUAL  DDRC
-      #define DIRECTION_PORT_DUAL PORTC
-      #define DUAL_DIRECTION_BIT  3  // Uno Analog Pin 3
+      #define DIRECTION_DDR_DUAL  DIRECTION_DDR
+      #define DIRECTION_PORT_DUAL DIRECTION_PORT
+      #define DUAL_DIRECTION_BIT  Z_DIRECTION_BIT
       #define DIRECTION_MASK_DUAL ((1<<DUAL_DIRECTION_BIT))
 
       // NOTE: Dual axis limit is shared with the z-axis limit pin by default. Pin used must be on the same port
