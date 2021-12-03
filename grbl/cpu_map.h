@@ -38,7 +38,7 @@
   #define STEP_PORT       PORTD
   #define X_STEP_BIT      2  // Uno Digital Pin 2
   #define Y_STEP_BIT      3  // Uno Digital Pin 3
-  #define Z_STEP_BIT      4  // Uno Digital Pin 4
+  #define Z_STEP_BIT      0
   #define STEP_MASK       ((1<<X_STEP_BIT)|(1<<Y_STEP_BIT)|(1<<Z_STEP_BIT)) // All step bits
 
   // Define step direction output pins. NOTE: All direction pins must be on the same port.
@@ -46,7 +46,7 @@
   #define DIRECTION_PORT    PORTD
   #define X_DIRECTION_BIT   5  // Uno Digital Pin 5
   #define Y_DIRECTION_BIT   6  // Uno Digital Pin 6
-  #define Z_DIRECTION_BIT   7  // Uno Digital Pin 7
+  #define Z_DIRECTION_BIT   1
   #define DIRECTION_MASK    ((1<<X_DIRECTION_BIT)|(1<<Y_DIRECTION_BIT)|(1<<Z_DIRECTION_BIT)) // All direction bits
 
   // Define stepper driver enable/disable output pin.
@@ -161,11 +161,11 @@
       // NOTE: Step pulse and direction pins may be on any port and output pin.
       #define STEP_DDR_DUAL       STEP_DDR
       #define STEP_PORT_DUAL      STEP_PORT
-      #define DUAL_STEP_BIT       Z_STEP_BIT
+      #define DUAL_STEP_BIT       4  // Uno Digital Pin 4
       #define STEP_MASK_DUAL      ((1<<DUAL_STEP_BIT))
       #define DIRECTION_DDR_DUAL  DIRECTION_DDR
       #define DIRECTION_PORT_DUAL DIRECTION_PORT
-      #define DUAL_DIRECTION_BIT  Z_DIRECTION_BIT
+      #define DUAL_DIRECTION_BIT  7  // Uno Digital Pin 7
       #define DIRECTION_MASK_DUAL ((1<<DUAL_DIRECTION_BIT))
 
       // NOTE: Dual axis limit is shared with the z-axis limit pin by default. Pin used must be on the same port
